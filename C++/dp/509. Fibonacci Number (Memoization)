@@ -15,4 +15,4 @@ int  solve(int n)
         memset(dp,-1,sizeof(dp));
         return solve( n);
     }
-    }
+    };
