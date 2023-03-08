@@ -1,0 +1,28 @@
+class Solution {
+public:
+ void solve( vector<int> nums,set<vector<int>>& ans,int i)
+    {
+        if( i >= nums.size())
+        {
+            
+            ans.insert(nums);
+            return;
+        }
+
+        for( int j=i;j<=nums.size()-1;j++)
+        {
+            swap(nums[i],nums[j]);
+            solve( nums, ans,i+1);
+            swap(nums[i],nums[j]);
+            
+        }
+    }
+    vector<vector<int>> permuteUnique(vector<int>& nums) {
+         set<vector<int>> ans;
+        int i=0;
+        solve( nums, ans, i);
+        vector<vector<int>> a;
+         for(auto it: ans) a.push_back(it);
+        return a;
+    }
+};
