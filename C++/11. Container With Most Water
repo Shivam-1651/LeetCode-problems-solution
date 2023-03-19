@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int s,e;
+        int ans=0;
+        int cal=0;
+        s=0;
+        e= height.size()-1;
+        while(s<e)
+        {
+            if(height[s]<height[e])
+            {
+                cal=height[s]*(e-s);
+                s++;
+            }
+            else
+            {
+
+                cal=height[e]*(e-s);
+                e--;
+    
+            }
+        ans=max(ans,cal);
+        }        
+    
+    return ans;
+    }
+};
