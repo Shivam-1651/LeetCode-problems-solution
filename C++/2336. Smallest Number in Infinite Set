@@ -1,0 +1,31 @@
+class SmallestInfiniteSet {
+public:
+set<int> s;
+    SmallestInfiniteSet() {
+        for( int i=1;i<=1000;i++)
+        s.insert(i);
+    }
+    
+    int popSmallest() {
+        int n=INT_MAX;
+        for(auto i:s)
+        {
+            n=min(i,n);
+       }
+       s.erase(n);
+        return n;
+    }
+    
+    void addBack(int num) {
+        s.insert(num);
+        
+    }
+};
+
+/**
+ * Your SmallestInfiniteSet object will be instantiated and c:
+calledalled as such:
+ * SmallestInfiniteSet* obj = new SmallestInfiniteSet();
+ * int param_1 = obj->popSmallest();
+ * obj->addBack(num);
+ */
