@@ -1,0 +1,34 @@
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& m) {
+        int k,n;
+        n=m.size();
+        k=m[0].size();
+        vector<int> r(n,1);
+        vector<int> c(k,1);
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<k;j++)
+            {
+         if( m[i][j]==0)
+         {
+
+            r[i]=0;
+            c[j]=0;
+         }
+    }
+        }
+        for(int i=0;i<n;i++)
+        {
+
+        for(int j=0;j<k;j++)
+       {
+        if( r[i]==0 or c[j]==0)
+        m[i][j]=0;
+
+        }
+    }
+
+
+    }
+};
